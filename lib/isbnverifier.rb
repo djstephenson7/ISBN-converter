@@ -2,11 +2,15 @@
 
 class ISBNVerifier
   def valid?(isbn)
-    format(isbn)
+    x = format(isbn)
+    x.each_char.with_index do |digit, int|
+      p digit.to_i
+      p int
+    end
   end
 
   def format(isbn)
-    formatted = isbn.tr('-', '').sub('X', '10')
-    formatted.length > 11 ? false : formatted
+    formatted = isbn.tr('-', '')
+    formatted.length != 10 ? false : formatted
   end
 end
