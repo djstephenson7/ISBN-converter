@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# ISBN verifier class that deals with validation logic
 class ISBNVerifier
   def valid?(isbn)
     x = format(isbn)
