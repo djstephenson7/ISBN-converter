@@ -15,4 +15,9 @@ describe ISBNVerifier do
   it 'Should return false if string length is too long' do
     expect(subject.valid?('3-598-21508-346X')).to eq false
   end
+
+  it 'Should return true when a valid ISBN is given' do
+    expect(subject.valid?('3-598-21507-X')).to eq true
+    expect(subject.valid?('3-598-21508-8')).to eq true
+  end
 end
