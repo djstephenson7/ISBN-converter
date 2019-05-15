@@ -2,6 +2,11 @@
 
 class ISBNVerifier
   def valid?(isbn)
-    isbn.gsub('-', '')
+    x = isbn.tr('-', '').sub('X', '10')
+    if x.length > 11
+      false
+    else
+      x
+    end
   end
 end
