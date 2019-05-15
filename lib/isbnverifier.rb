@@ -9,7 +9,7 @@ class ISBNVerifier
   end
 
   def format(isbn)
-    formatted = isbn.tr('-A', '')
+    formatted = isbn.tr('^0-9X', '')
     formatted.length != 10 ? false : formatted
   end
 end

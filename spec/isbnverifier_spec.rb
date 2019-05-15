@@ -14,6 +14,7 @@ describe ISBNVerifier do
 
   it 'Should return false if invalid characters in isbn' do
     expect(subject.format('3-598-21507-A')).to eq false
+    expect(subject.format('!-@£$-%^&*()-}')).to eq false
   end
 
   it 'Should return true when a valid ISBN is given' do
