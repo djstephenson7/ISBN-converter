@@ -3,11 +3,9 @@
 class ISBNVerifier
   def valid?(isbn)
     x = format(isbn)
-    x.each_char.with_index.sum do |_digit, index|
-      p index == 9
-      p x[index]
-      index == 9 && x[index] == 'X' ? 10 : 5
-    end
+    (x.each_char.with_index.sum do |digit, index|
+      index == 9 && digit == 'X' ? 10 : digit.to_i * (10 - index)
+    end % 11).zero?
   end
 
   def format(isbn)

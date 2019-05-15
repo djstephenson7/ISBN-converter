@@ -12,16 +12,12 @@ describe ISBNVerifier do
     expect(subject.format('1-')).to eq false
   end
 
-  it 'Should replace the final X char with 10' do
-    expect(subject.valid?('3-598-21507-X')).to eq '35982150710'
-  end
-
-  xit 'Should return true when a valid ISBN is given' do
+  it 'Should return true when a valid ISBN is given' do
     expect(subject.valid?('3-598-21507-X')).to eq true
     expect(subject.valid?('3-598-21508-8')).to eq true
   end
 
-  xit 'Should return false if an invalid ISBN is given' do
+  it 'Should return false if an invalid ISBN is given' do
     expect(subject.valid?('3-588-21507-X')).to eq false
     expect(subject.valid?('2-598-21508-9')).to eq false
   end
