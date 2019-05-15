@@ -2,11 +2,7 @@
 
 class ISBNVerifier
   def valid?(isbn)
-    x = isbn.tr('-', '').sub('X', '10')
-    if x.length > 11
-      false
-    else
-      x
-    end
+    format = isbn.tr('-', '').sub('X', '10')
+    format.length > 11 ? false : format
   end
 end
